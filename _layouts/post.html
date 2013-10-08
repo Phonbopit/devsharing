@@ -1,0 +1,50 @@
+---
+layout: default
+---
+
+<div class="clean-panel">
+    <div id="image-container-post">
+    
+    <img src="{{ page.feature-image-url }}" alt="{{ page.feature-image-credit }}"/>
+    <p class="publish-date"><i class="icon-time"></i> {{ page.date | date: "%B %e, %Y" }} </p>
+
+    </div> 
+    <div class="social-share">
+        <div class="fb-like" data-href="{{ site.url }}{{ page.url }}" data-width="100" data-layout="button_count" data-show-faces="false" data-send="false"></div>
+        
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="{{ site.url }}{{page.url}}" data-via="Devsharing" data-lang="en" data-text="{{ page.title }}">Tweet</a>
+            
+         <div class="g-plusone" data-href="{{ site.url}}{{ page.url }}" data-size="medium" ></div>
+    </div>
+    <div class="content" style="border-bottom: 2px solid #00a9eb;">
+        <a class="title" href="{{ page.url }}"><h1>{{ page.title }}</h1></a>
+
+        <div class="post-meta">
+            <a class="category"><i class="icon-bookmark"></i> {{ page.categories }}</a>
+            <a class="disqus" href="http://devsharing.com{{ page.url }}#disqus_thread"></a>
+        </div>
+    </div>
+
+  <article>
+    <p>{{ content }}</p>
+  </article>
+  
+    <ul class="post-meta-tag">
+        {% for tag in page.tags %}
+          <li>
+              <a href="{{ site.url }}/tags/{{ tag }}" class="post-tag"><i class="icon-tags"></i> {{ tag }}</a>
+          </li>
+        {% endfor %}
+    </ul>
+
+
+    <section class="disqus">
+     {% include disqus.html %}
+    </section>
+</div> <!-- /.clean-panel -->
+
+
+
+
+
+

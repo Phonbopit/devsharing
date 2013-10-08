@@ -1,0 +1,18 @@
+---
+layout: default
+title: Devsharing Tutorials
+---
+
+<div class="dev-panel">
+    <h1>Ubuntu</h1>
+    <img width="80px" height="80px" src="{{site.url}}/img/logo/ubuntu.png" />
+    {% for post in site.categories['ubuntu'] %}
+        <a class="title" href="{{ post.url }}"><p>{{ post.title }}</p></a>
+    {% endfor %}
+    
+    <h1>Java</h1>
+    <img width="80px" height="80px" src="{{site.url}}/img/logo/adt.png" />
+    {% for post in site.categories['java'] %}
+        <a class="title" href="{{ post.url }}"><p>{{ post.title }}</p></a>
+    {% endfor %}
+</div> <!-- /.clean-panel -->

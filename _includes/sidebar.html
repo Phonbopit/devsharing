@@ -1,0 +1,187 @@
+
+<!-- Ads
+======================================= 
+<div class="clean-panel-sidebar">
+    <h1 class="latest-post-header">Ads</h1>
+</div>
+-->
+<div class="clean-panel-sidebar">
+    <h1>Get in Touch</h1>
+    <ul class="get-in-touch">
+        <li id="facebook-icon"><a href="https://www.facebook.com/DevSharing"><i class="icon-facebook-sign icon-3x"></i></a></li>
+        <li id="twitter-icon"><a href="https://www.twitter/DevSharing"><i class="icon-twitter-sign icon-3x"></i></a></li>
+        <li id="google-plus-icon"><a href="https://plus.google.com/u/0/b/111580786924270580115"><i class="icon-google-plus-sign icon-3x"></i></a></li>
+        <li id="feed-icon"><a href="{{ site.url/feed.xml }}"><i class="icon-rss-sign icon-3x"></i> </a></li>
+    </ul>
+</div>
+
+
+
+<!-- Facebook Like Box
+======================================= -->
+<div class="clean-panel-sidebar" style="padding: 20px 40px;"><div class="fb-like-box" data-href="https://www.facebook.com/DevSharing" data-width="290" data-show-faces="true" data-header="false" data-stream="false" data-show-border="false"></div></div>
+
+<!--  Recommended Post.
+ =================================== -->
+<div class="clean-panel-sidebar">
+    <h1>Recommended</h1>
+    <ul class="posts">
+        {% for post in site.posts %}
+            {% if post.recommended == true %}
+            <li class="post">
+                <div class="image-feature">
+                    <a href="{{ post.url }}" rel="bookmark">
+                        <img src="{{ post.thumbnail }}" />
+                    </a>
+                </div>
+                <div class="title">
+                  <a href="{{ post.url }}" rel="bookmark">{{ post.title }}</a>
+                </div>
+            </li>
+            {% endif %}
+          
+        {% endfor %}
+    </ul>
+</div>   <!-- clean-panel-sidebar -->
+
+
+<!--  Latest Post.
+ =================================== -->
+<div class="clean-panel-sidebar">
+    <h1>Latest Post</h1>
+    <ul class="posts">
+        {% for post in site.posts limit:10 %}
+            <li class="post">
+                <div class="image-feature">
+                    <a href="{{ post.url }}" rel="bookmark">
+                        <img src="{{ post.thumbnail }}" />
+                    </a>
+                </div>
+                <div class="title">
+                  <a href="{{ post.url }}" rel="bookmark">{{ post.title }}</a>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>   <!-- clean-panel-sidebar -->
+
+<!-- Recent Comment
+===================================== -->
+<div class="clean-panel-sidebar">
+     <h1>Latest Comment</h1>
+    <div id="disqus-comment">
+        <script type="text/javascript" src="http://devsharing.disqus.com/recent_comments_widget.js?num_items=10&hide_avatars=0&avatar_size=48&excerpt_length=200"></script>
+    </div>
+    
+    <!-- Disqus CSS Custom -->
+    <style type="text/css" media="screen">   
+    ul.dsq-widget-list {   
+        padding-left: 0px;
+        padding-right: 20px;
+        margin: 0 0 10px 15px ;  
+        text-align: left;  
+        display: block;
+        text-decoration: none;
+    }  
+    img.dsq-widget-avatar { 
+        display: inline-block;
+        width: 64px;   
+        height: 64px;  
+        border: 10px;   
+        margin: 0px 20px 3px 0px;  
+        float: left;  
+        -webkit-border-radius: 500px;
+        -moz-border-radius: 500px;
+        -ms-border-radius: 500px;
+        -o-border-radius: 500px;
+        border-radius: 500px;
+    }  
+    img.dsq-widget-avatar:hover {
+      opacity: 0.8;
+    }
+    a.dsq-widget-user {  
+        font-weight: bold;   
+        color: #333;
+        padding-left: 15px;
+        display: block;
+    }  
+    a.dsq-widget-user:hover {
+        text-decoration: none;
+        opacity: 0.8;
+    }
+    a.dsq-widget-thread {  
+        font-weight: bold;   
+    }  
+    p.dsq-widget-meta {  
+        clear: both;   
+        font-size: 80%;  
+        padding: 5px 0 25px 5px;  
+        margin: 0;   
+        color: #333;
+    } 
+    p.dsq-widget-meta > a {
+        color: #828282;
+    }
+    p.dsq-widget-meta > a:hover {
+      text-decoration: none;
+      color: #666;
+    }
+
+    li.dsq-widget-item {   
+        margin: 15px 0;  
+        list-style-type: none;   
+        clear: both;   
+    }  
+    span.dsq-widget-clout {  
+        padding: 0 2px;  
+        background-color: #ff7300;   
+        color: #fff;   
+    }  
+    table.dsq-widget-horiz td {  
+        padding-right: 15px;   
+    }  
+    .dsq-widget-comment p {  
+        display: inline;   
+    }  
+</style>
+
+</div>
+
+
+<!-- Tagged Cloud
+===================================== -->
+<div class="clean-panel-sidebar">  
+    <h1>Tags</h1>
+    <ul class="tag-cloud">
+        {% assign max = 1 %}
+        {% for tag in site.tags %}
+            {% if tag[1].size > max %}
+                {% assign max = tag[1].size %}
+            {% endif %}
+        {% endfor %}
+        
+        {% for tag in site.tags limit: 30 %}
+            {% capture numTag %} {{ tag[1] | size }}  {% endcapture %}
+                   
+            <li class="tags">
+                <a href="{{ site.url }}/tags/{{ tag[0] }}" id="{{ forloop.index }}">
+                  <span class="name">{{ tag[0] }}</span>
+                  <span class="bar" style="width: {{ numTag | times:100 | divided_by:max  }}%;"></span>
+                  <span class="count">{{ numTag }}</span>
+                </a>
+            </li>
+        {% endfor %} 
+    </ul>
+</div>
+
+
+
+
+
+<script type="text/javascript">
+    $('ul.posts > li.post').hover(function() { 
+        $(this).addClass('show-border') },
+    function() { 
+        $(this).removeClass('show-border') 
+    });
+</script>
