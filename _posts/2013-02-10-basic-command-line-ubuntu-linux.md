@@ -8,7 +8,7 @@ tags:
 - terminal
 - Ubuntu
 recommended: true
-feature-image-url: farm8.staticflickr.com/7445/10155114435_1ec6f32ba7_b.jpg
+feature-image-url: http://farm8.staticflickr.com/7445/10155114435_1ec6f32ba7_b.jpg
 thumbnail: /img/logo/ubuntu.png
 summary: รวบรวมคำสั่ง command line พื้นฐาน ที่ใช้งานบ่อยๆ สำหรับ Ubuntu มือใหม
 ---
