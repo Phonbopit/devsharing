@@ -4,6 +4,7 @@
 .gist-cache
 .pygments-cache
 _deploy
+_drafts
 /_site
 flat-ui
 backup/*

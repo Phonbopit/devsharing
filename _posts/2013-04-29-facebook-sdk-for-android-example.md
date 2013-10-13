@@ -372,7 +372,8 @@ public class LoginActivity extends Activity {
 
 ***
 
-**Reference : **
+
+** Reference **
 
 <a href="https://developers.facebook.com/android/" target="_blank">
 	Facebook SDK for Android
