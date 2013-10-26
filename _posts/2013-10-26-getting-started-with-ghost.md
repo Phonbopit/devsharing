@@ -115,3 +115,9 @@ npm start
 
 ส่วนตัวแล้วชอบ Ghost มาก ดูใช้งานง่าย เขียนบทความค่อนข้างสะดวก สะอาดตาดี จัดการก็ค่อนข้างง่าย แต่ว่าตอนนี้ยังไม่รอบรับ git หรือ source code control, revision ต่างๆ หรือ nosql
 ส่วนแผนการต่างๆ feature ในอนาคต ของ Ghost ดูได้ทีนี่ครับ [Planned Features - Ghost](https://github.com/TryGhost/Ghost/wiki/Planned-Features)  แล้วมาดูกันว่าอนาคตจะนิยมขนาดไหน
+
+*** 
+
+** Reference **
+
+[Getting started with Ghost](http://phonbopit.com/getting-started-with-ghost-part-1/)
