@@ -30,12 +30,12 @@
             {% if post.recommended == true %}
             <li class="post">
                 <div class="image-feature">
-                    <a href="{{ post.url }}" rel="bookmark">
-                        <img src="{{ site.baseurl }}/{{ post.thumbnail }}" />
+                    <a href="{{site.baseurl}}{{ post.url }}" rel="bookmark">
+                        <img src="{{ site.baseurl }}{{ post.thumbnail }}" />
                     </a>
                 </div>
                 <div class="title">
-                  <a href="{{ post.url }}" rel="bookmark">{{ post.title }}</a>
+                  <a href="{{ site.baseurl}}{{ post.url }}" rel="bookmark">{{ post.title }}</a>
                 </div>
             </li>
             {% endif %}
@@ -53,12 +53,12 @@
         {% for post in site.posts limit:10 %}
             <li class="post">
                 <div class="image-feature">
-                    <a href="{{ post.url }}" rel="bookmark">
-                        <img src="{{ post.thumbnail }}" />
+                    <a href="{{ site.baseurl }}{{ post.url }}" rel="bookmark">
+                        <img src="{{ site.baseurl }}{{ post.thumbnail }}" />
                     </a>
                 </div>
                 <div class="title">
-                  <a href="{{ post.url }}" rel="bookmark">{{ post.title }}</a>
+                  <a href="{{site.baseurl}}{{ post.url }}" rel="bookmark">{{ post.title }}</a>
                 </div>
             </li>
         {% endfor %}
@@ -164,7 +164,7 @@
             {% capture numTag %} {{ tag[1] | size }}  {% endcapture %}
                    
             <li class="tags">
-                <a href="{{ site.baseurl }}/tags/{{ tag[0] }}" id="{{ forloop.index }}">
+                <a href="{{site.baseurl}}{{ site.baseurl }}/tags/{{ tag[0] }}" id="{{ forloop.index }}">
                   <span class="name">{{ tag[0] }}</span>
                   <span class="bar" style="width: {{ numTag | times:100 | divided_by:max  }}%;"></span>
                   <span class="count">{{ numTag }}</span>
@@ -173,10 +173,6 @@
         {% endfor %} 
     </ul>
 </div>
-
-
-
-
 
 <script type="text/javascript">
     $('ul.posts > li.post').hover(function() { 
