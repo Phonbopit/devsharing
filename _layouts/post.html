@@ -10,11 +10,11 @@ layout: default
 
     </div> 
     <div class="social-share">
-        <div class="fb-like" data-href="{{ site.url }}{{ page.url }}" data-width="100" data-layout="button_count" data-show-faces="false" data-send="false"></div>
+        <div class="fb-like" data-href="{{ siet.baseurl }}{{ page.url }}" data-width="100" data-layout="button_count" data-show-faces="false" data-send="false"></div>
         
-        <a href="https://twitter.com/share" class="twitter-share-button" data-url="{{ site.url }}{{page.url}}" data-via="Devsharing" data-lang="en" data-text="{{ page.title }}">Tweet</a>
+        <a href="https://twitter.com/share" class="twitter-share-button" data-url="{{ siet.baseurl }}{{page.url}}" data-via="Devsharing" data-lang="en" data-text="{{ page.title }}">Tweet</a>
             
-         <div class="g-plusone" data-href="{{ site.url}}{{ page.url }}" data-size="medium" ></div>
+         <div class="g-plusone" data-href="{{ siet.baseurl}}{{ page.url }}" data-size="medium" ></div>
     </div>
     <div class="content" style="border-bottom: 2px solid #00a9eb;">
         <a class="title" href="{{ page.url }}"><h1>{{ page.title }}</h1></a>
@@ -32,7 +32,7 @@ layout: default
     <ul class="post-meta-tag">
         {% for tag in page.tags %}
           <li>
-              <a href="{{ site.url }}/tags/{{ tag }}" class="post-tag"><i class="icon-tags"></i> {{ tag }}</a>
+              <a href="{{ siet.baseurl }}/tags/{{ tag }}" class="post-tag"><i class="icon-tags"></i> {{ tag }}</a>
           </li>
         {% endfor %}
     </ul>
