@@ -11,7 +11,7 @@
         <li id="facebook-icon"><a href="https://www.facebook.com/DevSharing"><i class="icon-facebook-sign icon-3x"></i></a></li>
         <li id="twitter-icon"><a href="https://www.twitter/DevSharing"><i class="icon-twitter-sign icon-3x"></i></a></li>
         <li id="google-plus-icon"><a href="https://plus.google.com/u/0/b/111580786924270580115"><i class="icon-google-plus-sign icon-3x"></i></a></li>
-        <li id="feed-icon"><a href="{{ site.url }}/feed.xml"><i class="icon-rss-sign icon-3x"></i> </a></li>
+        <li id="feed-icon"><a href="{{ site.baseurl }}/feed.xml"><i class="icon-rss-sign icon-3x"></i> </a></li>
     </ul>
 </div>
 
@@ -31,7 +31,7 @@
             <li class="post">
                 <div class="image-feature">
                     <a href="{{ post.url }}" rel="bookmark">
-                        <img src="{{ post.thumbnail }}" />
+                        <img src="{{ site.baseurl }}/{{ post.thumbnail }}" />
                     </a>
                 </div>
                 <div class="title">
@@ -164,7 +164,7 @@
             {% capture numTag %} {{ tag[1] | size }}  {% endcapture %}
                    
             <li class="tags">
-                <a href="{{ site.url }}/tags/{{ tag[0] }}" id="{{ forloop.index }}">
+                <a href="{{ site.baseurl }}/tags/{{ tag[0] }}" id="{{ forloop.index }}">
                   <span class="name">{{ tag[0] }}</span>
                   <span class="bar" style="width: {{ numTag | times:100 | divided_by:max  }}%;"></span>
                   <span class="count">{{ numTag }}</span>
